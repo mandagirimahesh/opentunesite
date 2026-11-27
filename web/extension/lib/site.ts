@@ -4,9 +4,13 @@
  * background's sender check and the popup's tab lookup, so all three agree.
  */
 
+/** Values injected by WXT at build time; `typeof` keeps Node unit tests independent of WXT. */
+declare const __OPENTUNE_WEB_ORIGIN__: string | undefined;
+declare const __OPENTUNE_WEB_PATH__: string | undefined;
+
 /** The canonical browser-player URL. Netlify builds set these in netlify.toml. */
-export const PRODUCTION_ORIGIN = process.env.OPENTUNE_WEB_ORIGIN || 'https://justshivv.github.io';
-export const PRODUCTION_PATH = process.env.OPENTUNE_WEB_PATH || '/Opentune/player/';
+export const PRODUCTION_ORIGIN = typeof __OPENTUNE_WEB_ORIGIN__ === 'string' ? __OPENTUNE_WEB_ORIGIN__ : 'https://justshivv.github.io';
+export const PRODUCTION_PATH = typeof __OPENTUNE_WEB_PATH__ === 'string' ? __OPENTUNE_WEB_PATH__ : '/Opentune/player/';
 
 /** Manifest match patterns for the site origins (externally_connectable, the Firefox relay, host access). */
 export function matchPatternsFor(origins: readonly string[]): string[] {

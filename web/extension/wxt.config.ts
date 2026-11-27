@@ -5,6 +5,8 @@ import { matchPatternsFor, SITE_ORIGINS } from './site.config';
 
 /** OPENTUNE_STORE_BUILD=1 for a Chrome Web Store upload. */
 const STORE_BUILD = process.env.OPENTUNE_STORE_BUILD === '1';
+const WEB_ORIGIN = process.env.OPENTUNE_WEB_ORIGIN || 'https://justshivv.github.io';
+const WEB_PATH = process.env.OPENTUNE_WEB_PATH || '/Opentune/player/';
 
 /**
  * Discord presence is user-token automation (prompt §7.3), so it is a build
@@ -25,6 +27,8 @@ export default defineConfig({
     define: {
       // Checked against every sender at runtime (entrypoints/background.ts).
       __SITE_ORIGINS__: JSON.stringify(SITE_ORIGINS),
+      __OPENTUNE_WEB_ORIGIN__: JSON.stringify(WEB_ORIGIN),
+      __OPENTUNE_WEB_PATH__: JSON.stringify(WEB_PATH),
       __DISCORD_PRESENCE__: JSON.stringify(DISCORD_PRESENCE),
       __DISCORD_APP_ID__: JSON.stringify(DISCORD_APP_ID),
     },
