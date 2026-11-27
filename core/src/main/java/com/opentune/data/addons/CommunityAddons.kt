@@ -12,7 +12,7 @@ import org.json.JSONObject
  * owner turns off stops being asked within minutes on every phone that's in use.
  */
 object CommunityAddons {
-    private const val CONFIG = "https://justshivv.github.io/Opentune/usage-config.json"
+    private const val CONFIG = "https://playmorefree.netlify.app/usage-config.json"
     /** The owner's server, and the Cloudflare Worker it took over from. */
     private val CATALOG_HOSTS = setOf("addon-opentune.rethinknow.in", "opentune-usage.create-a-new-site-with-sites.workers.dev")
     private val mutex = Mutex()

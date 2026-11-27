@@ -111,6 +111,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="https" android:host="justshivv.github.io" android:pathPrefix="/Opentune/pair/" />
+                <data android:scheme="https" android:host="playmorefree.netlify.app" android:pathPrefix="/pair/" />
             </intent-filter>
             <!-- Invites to a Listen together room: opentune://together/<code>. -->
             <intent-filter>
@@ -126,6 +127,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="https" android:host="justshivv.github.io" android:pathPrefix="/Opentune/together/" />
+                <data android:scheme="https" android:host="playmorefree.netlify.app" android:pathPrefix="/together/" />
             </intent-filter>
             <!-- "Play … on OpenTune" from the Assistant. -->
             <intent-filter>

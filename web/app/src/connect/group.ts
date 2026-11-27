@@ -1,7 +1,8 @@
 import { aesKey, gcmOpen, gcmSeal, toHex } from '@/together/crypto';
+import { config } from '@/config';
 
 const enc = new TextEncoder();
-export const WEB_PLAYER = 'https://justshivv.github.io/Opentune/player/';
+export const WEB_PLAYER = config.webPlayerUrl;
 const ENCODED = /^[A-Za-z0-9_-]{43}$/;
 
 export const toBase64Url = (b: Uint8Array) => btoa(String.fromCharCode(...b)).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');

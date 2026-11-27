@@ -39,7 +39,7 @@ export function mountUpdates(parent: HTMLElement): void {
           }
         } catch { /* Firefox and unpacked installs may not support this API. */ }
       }
-      const endpoint = 'https://justshivv.github.io/Opentune/player/downloads/extension.json';
+      const endpoint = new URL('downloads/extension.json', browser.runtime.getManifest().homepage_url).href;
       const response = await fetch(endpoint, { cache: 'no-store', signal: AbortSignal.timeout(10_000) });
       if (!response.ok) throw new Error('Update service is unavailable. Try again later.');
       const release = await response.json() as { version?: string; files?: { chrome?: string; firefox?: string } };

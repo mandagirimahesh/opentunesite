@@ -2,7 +2,7 @@ import { currentConfig, refreshConfig } from '@/config/remote';
 import { endpoint, type Addon } from '@opentune/shared/addons';
 
 /** Where the site says the owner's server is; the catalog is only ever read from one of these. */
-const CONFIG_URL = 'https://justshivv.github.io/Opentune/usage-config.json';
+const CONFIG_URL = import.meta.env.VITE_SITE_ROOT_URL || 'https://playmorefree.netlify.app/usage-config.json';
 const CATALOG_HOSTS = ['addon-opentune.rethinknow.in', 'opentune-usage.create-a-new-site-with-sites.workers.dev'];
 /** As on Android: looked at on start and when Audio sources opens, at most this often. */
 const REFRESH_MS = 15 * 60_000;

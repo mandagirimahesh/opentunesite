@@ -4,9 +4,9 @@
  * background's sender check and the popup's tab lookup, so all three agree.
  */
 
-/** GitHub Pages serves the player under one repository path; nothing else on the host may use the bridge. */
-export const PRODUCTION_ORIGIN = 'https://justshivv.github.io';
-export const PRODUCTION_PATH = '/Opentune/player/';
+/** The canonical browser-player URL. Netlify builds set these in netlify.toml. */
+export const PRODUCTION_ORIGIN = process.env.OPENTUNE_WEB_ORIGIN || 'https://justshivv.github.io';
+export const PRODUCTION_PATH = process.env.OPENTUNE_WEB_PATH || '/Opentune/player/';
 
 /** Manifest match patterns for the site origins (externally_connectable, the Firefox relay, host access). */
 export function matchPatternsFor(origins: readonly string[]): string[] {

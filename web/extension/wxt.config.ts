@@ -34,7 +34,7 @@ export default defineConfig({
     description: DISCORD_PRESENCE
       ? 'Connects the NepTune web player to YouTube Music, Spotify, lyric sources and Discord.'
       : 'Connects the NepTune web player to YouTube Music, Spotify and lyric sources.',
-    homepage_url: 'https://justshivv.github.io/Opentune/player/',
+    homepage_url: `${process.env.OPENTUNE_WEB_ORIGIN || 'https://justshivv.github.io'}${process.env.OPENTUNE_WEB_PATH || '/Opentune/player/'}`,
     action: { default_title: 'NepTune' },
     // Extension pages run only their own scripts, embed nothing and can't be framed.
     content_security_policy: {

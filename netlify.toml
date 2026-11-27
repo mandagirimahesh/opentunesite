@@ -1,0 +1,11 @@
+[build]
+  command = "cd web && corepack enable && pnpm install --frozen-lockfile && pnpm --filter @opentune/extension icons && pnpm build:site && mkdir -p ../site/player && cp -R app/dist/. ../site/player/"
+  publish = "site"
+
+[build.environment]
+  NODE_VERSION = "24"
+  OPENTUNE_WEB_ORIGIN = "https://playmorefree.netlify.app"
+  OPENTUNE_WEB_PATH = "/player/"
+  OPENTUNE_WEB_BASE = "/player/"
+  VITE_WEB_PLAYER_URL = "https://playmorefree.netlify.app/player/"
+  VITE_SITE_ROOT_URL = "https://playmorefree.netlify.app/usage-config.json"

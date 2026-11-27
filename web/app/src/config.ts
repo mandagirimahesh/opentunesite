@@ -1,5 +1,7 @@
 /** Build-time configuration, from Vite's `VITE_*` environment variables. */
 export const config = {
+  /** Public URL used in links shared by this particular deployment. */
+  webPlayerUrl: import.meta.env.VITE_WEB_PLAYER_URL || 'https://playmorefree.netlify.app/player/',
   /** Pinned in development by the manifest `key` (web/extension/wxt.config.ts). */
   chromiumExtensionId: import.meta.env.VITE_EXTENSION_ID_CHROMIUM || DEV_EXTENSION_ID,
   /** The extension packages (web/extension: `pnpm package` copies them into public/downloads). */
