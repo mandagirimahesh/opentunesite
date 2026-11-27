@@ -45,10 +45,10 @@ The first command validates listing lengths and exports metadata under `build/st
 
 ## Listing and website
 
-Canonical app page: https://justshivv.github.io/Opentune/
+Canonical app page: https://playmorefree.netlify.app/
 
-Privacy policy (available after the website changes are approved and deployed): https://justshivv.github.io/Opentune/privacy/
+Privacy policy (available after the website changes are approved and deployed): https://playmorefree.netlify.app/privacy/
 
 Metadata source: `fastlane/metadata/android/en-US`. Update the changelog matching `versionCode`, keep the app ID `com.opentune`, increment versionCode for releases and describe only shipped features. Review each store's privacy/data declarations against the actual code, including optional connected services.
 
-The website includes canonical URLs, app structured data, crawlable FAQs and `sitemap.xml`. Once published, submit `https://justshivv.github.io/Opentune/sitemap.xml` in Google Search Console and Bing Webmaster Tools after verifying the site. Indexing/ranking is controlled by search engines. A project-level `/Opentune/robots.txt` would not govern this host: robots.txt belongs at `https://justshivv.github.io/robots.txt`, so this project uses page-level robots metadata and omits private dashboard/invite URLs from the sitemap.
+The website includes canonical URLs, app structured data, crawlable FAQs, `robots.txt` and `sitemap.xml`. Once published, submit `https://playmorefree.netlify.app/sitemap.xml` in Google Search Console and Bing Webmaster Tools after verifying the site. Indexing/ranking is controlled by search engines. Netlify serves the root `robots.txt`; private pairing, invite and callback pages are `noindex` and omitted from the sitemap.
